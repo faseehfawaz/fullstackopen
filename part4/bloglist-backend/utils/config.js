@@ -1,0 +1,15 @@
+require('dotenv').config()
+
+const PORT = process.env.PORT || 3003
+const MONGODB_URI =
+  process.env.NODE_ENV === 'test'
+    ? process.env.TEST_MONGODB_URI || 'mongodb://localhost/bloglist-test'
+    : process.env.MONGODB_URI || 'mongodb://localhost/bloglist'
+
+const SECRET = process.env.SECRET || 'supersecretkey'
+
+module.exports = {
+  PORT,
+  MONGODB_URI,
+  SECRET,
+}
